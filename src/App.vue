@@ -1,28 +1,59 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id='app'>
+    <nav>
+      <div class="navigation_logo">
+        Twootter
+      </div>
+      <div class="navigation_user">
+        {{user.username}}
+      </div>
+    </nav>
+  <router-view/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
-export default {
+export default{
   name: 'App',
-  components: {
-    HelloWorld
+  data(){
+    return {
+      user: {
+        username: '_JeffersonPinheiro'
+      }
+    }
   }
 }
+
 </script>
 
-<style>
+<style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  min-height: 100vh;
+  background-color: #f3f5fa;
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 5%;
+    background-color: deeppink;
+    color: white;
+
+    .navigation_logo{
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+    .navigation_use{
+      font-weight: bold;
+    }
+
+  }
+
 }
 </style>
